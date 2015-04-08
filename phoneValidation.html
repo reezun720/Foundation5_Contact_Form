@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Phone Validation</title>
+<link rel="stylesheet" href="css/foundation.css" />
+</head>
+<body>
+  <p>
+    <!-- Removed the word "required" to make it optional validation -->
+    <form data-abide method="post" action="php/submission.php" target="_new">
+      <div class="row">
+        <div class="large-12 columns">
+          <h1>Contact Us!</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 medium-12 columns">
+          <div class="name-field">
+            <label>Name&nbsp;<small>required</small>
+              <input type="text" required pattern="[a-zA-Z]+" placeholder="e.g. John Doe" name="name">
+            </label>
+            <small class="error">Name is required and must only contain letters.</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-4 medium-4 columns">
+          <div class="phone-field">
+          <label>Phone&nbsp;<small>required</small>
+            <input type="text" pattern="telephone" placeholder="e.g. 222-222-2222" name="phone" required>
+          </label>
+          <small class="error">Phone is required and must be an actual phone number.</small>
+          </div>
+        </div>
+        <div class="large-4 medium-4 columns">
+              <div class="email-field">
+                <label>Email&nbsp;<small>required</small>
+                  <input type="text" required placeholder="email@stereocrate.com" name="email">
+                </label>
+                <small class="error">A valid email address is required.</small>
+              </div>
+            </div>
+            <div class="large-4 medium-4 columns">
+            <label for="customDropdown1">How did you hear about us?&nbsp;<small>required</small>
+              <select id="customDropdown1" class="medium" name="selectionBox" required>
+                <option value="">Select One</option>
+                <option value="Google">Google</option>
+                <option value="Soundcloud">Soundcloud</option>
+                <option value="Youtube">Youtube</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <small class="error">Please select one.</small>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="subject-field">
+            <label>Subject&nbsp;<small>required</small>
+              <input type="text" class="alpha-numberic" name="subject" required>
+            </label>
+            <small class="error">Please enter a subject for your message.</small>
+          </div>
+          <div class="message-field">
+            <label>Message&nbsp;<small>required</small>
+              <input type="text" class="alpha_numeric" name="message" required>
+            </label>
+            <small class="error">Please provide a brief message.</small>
+          </div>
+          <div class="captcha-field">
+            <label>What is 50 + 2?&nbsp;<small>required</small>
+              <input type="text" class="numberic" pattern="quiz" placeholder="Answer" name="hQuestion" required>
+            </label>
+            <small class="error">Please answer the question to prove you are human.</small>
+          </div>
+        <ul class="right">
+            <button type="submit" class="medium round button green">Submit</button><br>
+            <center><button type="reset" class="medium round button green">Reset</button></center>
+        </ul>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation/foundation.orbit.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  <script>
+    $(document).foundation();
+  </script>
+  <script>
+  $(document).foundation({
+    abide : {
+    patterns: {
+    telephone: /^[2-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]*$/,
+    phone: /^[2-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$/
+  }
+}
+});
+</script>
+<script>
+$(document).foundation({
+abide : {
+patterns: {
+quiz: /^[5][2]*$/,
+captcha: /^[5][2]$/
+}
+}
+});
+</script>
+  </body>
+  </html>
